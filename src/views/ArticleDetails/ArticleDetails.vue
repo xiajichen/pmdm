@@ -8,7 +8,7 @@
       <div class="leftContent" style="margin-bottom: 30px;margin-top: 10px">
         <h1 style="text-align: center;">{{title}}</h1>
         <p style="text-align: center;margin-top: 10px">作者：{{author}}  所属分类：{{category}}   发布时间：{{publishTime}}</p><br>
-        <p class="ql-editor" v-loading="loading" v-html="content" style="width: 80%;margin: auto"></p>
+        <p class="ql-editor" v-loading="loading" v-html="content" style="width: 80%;margin: auto;min-height: 100px"></p>
       </div>
     </div>
 </template>
