@@ -1,26 +1,30 @@
 <template>
     <div>
       <div class="amap-page-container">
-        <el-amap vid="amap" :zoom="zoom" :center="center" class="amap-demo" :plugin="plugin">
-          <el-amap-info-window
-            :position="currentWindow.position"
-            :content="currentWindow.content"
-            :visible="currentWindow.visible"
-            :events="currentWindow.events">
-          </el-amap-info-window>
-        </el-amap>
-        <div class="toolbar">
+        <el-card shadow="hover">
+          <el-amap vid="amap" :zoom="zoom" :center="center" class="amap-demo" :plugin="plugin">
+            <el-amap-info-window
+              :position="currentWindow.position"
+              :content="currentWindow.content"
+              :visible="currentWindow.visible"
+              :events="currentWindow.events">
+            </el-amap-info-window>
+          </el-amap>
+          <div class="toolbar">
           <span v-if="loaded">
             location: lng = {{ lng }} lat = {{ lat }}
           </span>
-          <span v-else></span>
-        </div>
+            <span v-else></span>
+          </div>
+        </el-card>
     </div>
-      <span>单 位：江西省高等学校平面设计与动漫工程技术研究中心</span>
-      <span>地址：萍乡市萍安中大道211号萍乡学院</span><br/>
-      <span>邮政编码：337000</span>
-      <span>办公电话：6682102</span>
-      <span>电子邮箱：328941445@qq.com</span>
+      <div style="padding: 15px">
+        <span>单 位：江西省高等学校平面设计与动漫工程技术研究中心</span>
+        <span>地址：萍乡市萍安中大道211号萍乡学院</span><br/>
+        <span>邮政编码：337000</span>
+        <span>办公电话：6682102</span>
+        <span>电子邮箱：328941445@qq.com</span>
+      </div>
     </div>
 </template>
 

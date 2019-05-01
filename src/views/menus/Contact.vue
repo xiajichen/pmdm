@@ -8,11 +8,6 @@
     </div>
     <div class="row" style="margin-top: 10px">
       <div class="col-md-3">
-        <!--<div class="list-group">-->
-          <!--&lt;!&ndash;生成路由链接&ndash;&gt;-->
-          <!--<router-link to="/Contact/FeedBack" class="list-group-item">意见反馈</router-link>-->
-          <!--<router-link to="/Contact/Map" class="list-group-item">位置信息</router-link>-->
-        <!--</div>-->
         <el-menu
           default-active="2"
           active-text-color="#9f2124"

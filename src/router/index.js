@@ -14,11 +14,11 @@ export default new VueRouter({
           component:resolve => require(['../views/Contact/FeedBack'],resolve)
         },
         {
-          path:'/FeedBack',
+          path:'FeedBack',
           component:resolve => require(['../views/Contact/FeedBack'],resolve)
         },
         {
-          path:'/Map',
+          path:'Map',
           component:resolve => require(['../views/Contact/Map'],resolve)
         }
       ]
