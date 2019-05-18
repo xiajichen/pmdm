@@ -1,7 +1,7 @@
 <template>
   <div class="webBg">
     <header style="text-align: center">
-      <img src="./assets/images/headLogo.png"/>
+      <img src="./assets/images/headLogo.png" width="100%"/>
     </header>
     <Daohanglan/>
     <Dibu/>

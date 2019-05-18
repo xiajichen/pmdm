@@ -3,7 +3,7 @@
     <div class="row">
       <!-- 轮播图-->
       <div class="block">
-        <el-carousel id="carousel" class="ss" trigger="click" :interval="5000" height="350px">
+        <el-carousel id="carousel" class="ss" trigger="click" :interval="5000" height="350">
           <el-carousel-item v-for="item in carosels" :key="item.carouselId">
             <img :src="imgUrl+item.carouselPictrue" ref="imgHeight">
           </el-carousel-item>
@@ -15,26 +15,26 @@
           <el-card shadow="hover">
             <div class="col-md-6 col-xs-2 move" style="margin-bottom: 25px;text-align: center;cursor: pointer;margin-left: -5px" @click="fastIn('/Introduction','44b4e30a-c3fe-43a0-b124-7550e14ab003','')">
                 <img :src="jianjie" alt="中心简介" />
-                <p class="fastcardName">中心简介</p>
+                <p class="fastcardName" v-if="wordshow">中心简介</p>
             </div>
             <div class="col-md-6 col-xs-2 move" style="margin-bottom: 25px;text-align: center;cursor: pointer" @click="fastIn('/Institution','2f93cfc7-9afc-4305-b37e-ea9a0a119bd2','')">
               <img :src="weiyuanhui" alt="学术委员会"/>
-              <p class="fastcardName">学术委员会</p>
+              <p class="fastcardName" v-if="wordshow">学术委员会</p>
             </div>
             <div class="col-md-6 col-xs-2 move" style="margin-bottom: 25px;text-align: center;cursor: pointer;margin-left: -5px" @click="fastIn('/Categorys','f12325d6-d4d5-41bb-b989-be27c558918e','研究方向')">
                 <img :src="dongman" alt="研究方向"/>
-                <p class="fastcardName">研究方向</p>
+                <p class="fastcardName" v-if="wordshow">研究方向</p>
             </div>
             <div class="col-md-6 col-xs-2 move" style="margin-bottom: 25px;text-align: center;cursor: pointer" @click="fastIn('/Shijian','','')">
               <img :src="sheji" alt="项目实践"/>
-              <p class="fastcardName">项目实践</p>
+              <p class="fastcardName" v-if="wordshow">项目实践</p>
             </div>
             <div class="col-md-6 col-xs-2 move" style="margin-bottom: 25px;text-align: center;cursor: pointer;margin-left: -5px" @click="fastIn('/Contact','','')">
               <img :src="fankui" alt="意见反馈"/>
-              <p class="fastcardName">意见反馈</p></div>
+              <p class="fastcardName" v-if="wordshow">意见反馈</p></div>
             <div class="col-md-6 col-xs-2 move" style="margin-bottom: 25px;text-align: center;cursor: pointer" @click="fastIn('/Download','','')">
               <img :src="download" alt="资料下载"/>
-                <p class="fastcardName">资料下载</p>
+                <p class="fastcardName" v-if="wordshow">资料下载</p>
             </div>
           </el-card>
       </div>
@@ -139,7 +139,8 @@
         //更多图标
         more:'',
         //无图片
-        nopic:''
+        nopic:'',
+        wordshow:document.body.offsetWidth>630,
       }
     },
     created() {
@@ -150,7 +151,6 @@
       this.getLatestHonor();
     },
     mounted() {
-
     },
     methods: {
       fastIn(path,categoryId,name) {
